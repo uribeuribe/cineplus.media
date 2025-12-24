@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cine Plus 🎬 | Cine legal gratis</title>
+
+<!-- ✅ Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3623005145407316" crossorigin="anonymous"></script>
+
+<style>
+body {
+  margin: 0;
+  background: #0b0b0b;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+header {
+  background: #111;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.logo {
+  color: #e50914;
+  font-size: 22px;
+  font-weight: bold;
+}
+input {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  margin-left: 10px;
+}
+
+nav {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+nav a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover {
+  color: #e50914;
+}
+
+/* ==================== Cards dinámicas ==================== */
+#movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 15px;
+}
+.card {
+  background: #1c1c1c;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.2s;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.card p {
+  padding: 8px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ==================== Sección Cine Plus Media ==================== */
+#media-section {
+  background-color: #111;
+  padding: 20px;
+  text-align: center;
+}
+#media-section h2 {
+  color: #e50914;
+  margin-bottom: 20px;
+}
+.media-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+.media-card {
+  background-color: #1c1c1c;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.2s;
+}
+.media-card:hover {
+  transform: scale(1.05);
+}
+.media-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.media-card h3 {
+  margin: 10px 0;
+  font-size: 16px;
+}
+.media-card video {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* ==================== Modal ==================== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 3000;
+  justify-content: center;
+  align-items: center;
+}
+.modal iframe, .modal video {
+  width: 90%;
+  max-width: 900px;
+  height: 500px;
+  border-radius: 12px;
+  border: none;
+}
+.close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 35px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="logo">🎬 Cine Plus</div>
+  <input id="search" placeholder="Buscar películas o series..." />
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Categorías</a>
+    <a href="#">Contacto</a>
+  </nav>
+</header>
+
+<!-- 🔹 Películas dinámicas (API) -->
+<div id="movies"></div>
+
+<!-- 🎞️ Sección de películas alojadas manualmente -->
+<section id="media-section">
+  <h2>📁 Cine Plus Media</h2>
+  <div class="media-container">
+
+    <div class="media-card">
+      <img src="https://archive.org/services/img/night_of_the_living_dead" alt="Night of the Living Dead">
+      <h3>Night of the Living Dead (1968)</h3>
+      <video controls poster="https://archive.org/services/img/night_of_the_living_dead">
+        <source src="https://archive.org/download/night_of_the_living_dead/night_of_the_living_dead.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+      </video>
+    </div>
+
+    <div class="media-card">
+      <img src="https://archive.org/services/img/little_shop_of_horrors" alt="The Little Shop of Horrors">
+      <h3>The Little Shop of Horrors (1960)</h3>
+      <video controls poster="https://archive.org/services/img/little_shop_of_horrors">
+        <source src="https://archive.org/download/little_shop_of_horrors/little_shop_of_horrors.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="media-card">
+      <img src="https://archive.org/services/img/sin-rastro-peliculas" alt="La Mafia Solo Piensa En Sí Misma">
+      <h3>La Mafia Solo Piensa En Sí Misma</h3>
+      <video width="350px" height="350px" controls poster="https://archive.org/services/img/sin-rastro-peliculas">
+        <source src="https://archive.org/download/sin-rastro-peliculas/La+Mafia+S%C3%B3lo+Piensa+En+S%C3%AD+Misma.%D0%A1rimen+Pelicula+Completa+En+Espa%C3%B1ol.mp4" type="video/mp4">
+      </video>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
